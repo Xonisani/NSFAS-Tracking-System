@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'login.png' %}">
+
+    <!---we had linked our css file----->
+</head>
+<body>
+    
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="nsfas.jpg" alt="">
+            </div>
+    <div class="full-page">
+        <div class="navbar">
+            <div class="navbar">
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href="{% url 'home' %}">Home-Page</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href="{% url 'stud_Login' %}">Student</a></li>
+                    <li><a href="{% url 'lect_login' %}">Lecturer</a></li>
+                    <li><a href="{% url 'nsfas_login' %}">NSFAS</a></li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+    </div>
+    >
+    </header>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Lecturer Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'registration.css' %}">
+        <link rel="icon" href="{% static 'login.png' %}">
+
+        <body>
+            <div class="navbar">
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href="{% url 'login' %}">Login-Page</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <form action="lect_login" method="POST">
+                {% csrf_token %}
+                <div class="login-box">
+                    <h1>Lecturer</h>
+
+                    <div class="textbox">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" placeholder="Lecturer ID" class="form-contol" name="lecturer_id" value="">
+                    </div>
+
+                    <div class="textboxpass">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" placeholder="Password" class="form-contol" name="password" value=""> 
+                    </div>
+
+                    <input type="submit" class="bttn" value="Sign in">  
+                </div>
+                
+                <div class="error-msg">
+                    {% if messages %}
+                    {% for result in messages %}
+                    <b style="color: red;"> <h1>{{result}}</h1> </b>
+                    {% endfor %}
+                    {% endif %}
+                </div> 
+
+            </form>
+            
+
+        </body>
+    </head>
+</html>

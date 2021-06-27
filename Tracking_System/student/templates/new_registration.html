@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<title>Registration</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'registration.css' %}">
+<link rel="icon" href="{% static 'register.png' %}">
+
+<body>
+<div class="navbar">
+    <nav>
+        <ul id='MenuItems'>
+            <li><a href="{% url 'home' %}">Home-Page</a></li>
+        </ul>
+    </nav>
+</div>
+<!-- multistep form -->
+<form id="msform" action="registration" method="POST">  
+	{% csrf_token %}  
+	
+	<div class="fs-title">
+		<label for="student_num" class="control-label col-sm-2">Enter student number</label>
+		<input type="number" name="student_num" required />
+	</div> 
+
+	<div class="fs-title">
+		<label for="password" class="control-label col-sm-2">Enter-password</label>
+		<input type="password" required 
+				onchange="form.re_password.pattern=this.value" name="password"/>
+	</div>
+
+	<div class="fs-title">
+		<label for="re_password" class="control-label col-sm-2">Confirm-password</label>
+		<input type="password" name="re_password" required />
+	</div> 
+
+	<div class="fs-title">
+	<button type="submit" class="submit action-button">Register</button>
+	
+	</div>
+	<div>
+		{% if messages %}
+		{% for result in messages %}
+		<b style="color: green;">{{result}}</b>
+		{% endfor %}
+		{% endif %}
+	</div>
+	</div> 
+	</form> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Tracking System</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'nsfas.png' %}">
+
+    <!---we had linked our css file----->
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="nsfas.jpg" alt="">
+            </div>
+    <div class="full-page">
+        <div class="navbar">
+            <div>
+                
+            </div>
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </header>
+</body>
+</html>
